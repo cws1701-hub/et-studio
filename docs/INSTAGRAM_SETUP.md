@@ -57,12 +57,22 @@ python scripts/post_instagram.py \
 > 이미지 호스팅 등)에 업로드하고 그 URL을 사용해야 합니다. 릴스(동영상)도
 > 동일한 원리이며 `media_type=REELS` 파라미터가 추가로 필요합니다.
 
-## 5. 릴스 게시 시 추가로 필요한 것
+## 5. 릴스 게시
 
-- 영상 파일 (mp4, 권장: 9:16 비율, 3분 이내)
-- 영상도 공개 URL 필요
-- `POST /{ig-user-id}/media`에 `media_type=REELS`, `video_url` 파라미터 사용
-- 처리 완료까지 폴링 필요 (`GET /{container-id}?fields=status_code`)
+`post_instagram.py`는 이미지와 릴스(영상) 게시를 모두 지원합니다.
 
-`post_instagram.py`에는 이미지 게시 흐름만 우선 구현되어 있습니다. 릴스 자동
-게시가 필요하면 다음 단계에서 `media_type=REELS` 분기를 추가하겠습니다.
+```bash
+python scripts/post_instagram.py \
+  --video-url https://example.com/intro_reel.mp4 \
+  --cover-url https://example.com/intro_reel_cover.jpg \
+  --caption content/cerezo-osaka-jy/captions/intro.txt
+```
+
+- 영상 파일은 mp4, 9:16 비율, 3분 이내 권장이며 **공개 접근 가능한 URL**이어야 합니다.
+- 내부적으로 `POST /{ig-user-id}/media`에 `media_type=REELS` + `video_url`로
+  컨테이너를 만들고, 영상 처리 상태를 폴링(`GET /{container-id}?fields=status_code`)한
+  뒤 `media_publish`로 게시합니다. 영상 처리는 이미지보다 오래 걸릴 수 있어
+  최대 180초까지 대기합니다.
+- `--cover-url`로 커버 이미지를 지정할 수 있고, `--no-share-to-feed`를 주면
+  릴스 탭에만 노출되고 피드에는 공유되지 않습니다.
+- `--dry-run`으로 실제 게시 없이 요청 내용만 먼저 확인해보세요.

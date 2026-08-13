@@ -9,16 +9,23 @@ affiliation: "J리그 가와사키 프론탈레 산하 클럽유스 (주니어�
 category: "U-15"
 league: "일본클럽유스선수권 등 (정확한 소속 리그/카테고리 명칭은 공식 확인 필요)"
 
+note: >
+  [중요] 가와사키 프론탈레 U-15는 이쿠타(生田)와 도도로키(等々力) 2개 팀으로
+  운영됨을 확인함 (출처: 구단 홈페이지/카나가와현축구협회 검색 결과, 2026-08-13).
+  이 파일은 두 팀을 통칭하며, 콘텐츠 제작 시 어느 팀을 다루는지 명확히 구분할 것.
+
 location:
   prefecture: "가나가와현(神奈川県)"
-  city: "가와사키시(川崎市) — 정확한 훈련장 소재지는 공식 확인 필요"
+  city: "가와사키시(川崎市) — 이쿠타(生田)/도도로키(等々力) 2개 거점, 정확한 훈련장 주소는 공식 확인 필요"
 
 founded_year: unknown
 
 official:
-  website: ""
-  instagram: ""
+  website: "https://www.frontale.co.jp/academy/"
+  instagram: "https://www.instagram.com/frontale_kids/"
+  instagram_note: "U-15 전용이 아닌 '아카데미&스쿨' 통합 계정"
   twitter: ""
+  twitter_note: "검색 결과 동일 핸들(@frontale_kids)의 X(트위터) 계정 존재 가능성 있음 — URL 재확인 필요"
   youtube: ""
 
 facilities:
@@ -58,12 +65,17 @@ content_angles:
   - "(2단계) 유학/입단 절차 — 공식 확인 후 별도 콘텐츠로 분리"
 
 verification:
-  status: draft
+  status: partial
   last_checked: "2026-08-13"
   notes: >
-    초기 스캐폴딩 단계. 구단명/소속 외 세부 정보(시설, 기숙사, 학비, 유학생 수용 정책,
-    졸업생 경로, 공식 SNS 링크)는 모두 미확인. 한국 학생/선수 관련 사례도 아직 못 찾음 —
-    추가 리서치 또는 구단 직접 문의 필요. 콘텐츠 발행 전 반드시 공식 홈페이지·구단 문의로
+    공식 홈페이지 URL, 공식 인스타그램 계정, 이쿠타/도도로키 2팀 체제는 웹검색으로
+    확인. 단, 창단연도·정확한 훈련장 주소·기숙사 유무·코칭스태프·학비·유학생 수용
+    정책·졸업생 명단은 여전히 미확인. 한국 학생/선수 관련 공개 사례도 아직 발견하지
+    못함. 콘텐츠 제작 전 반드시 frontale.co.jp/academy/ 직접 열람 또는 구단 문의로
     재검증할 것.
 
-sources: []
+sources:
+  - url: "https://www.frontale.co.jp/academy/"
+    note: "가와사키 프론탈레 아카데미 공식 페이지 (웹검색 스니펫으로 존재 확인, 2026-08-13. 직접 열람은 네트워크 제약으로 미실시)"
+  - url: "https://www.instagram.com/frontale_kids/"
+    note: "가와사키 프론탈레 아카데미&스쿨 공식 인스타그램 (검색 시점 팔로워 약 1만)"

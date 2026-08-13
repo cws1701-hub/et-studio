@@ -7,22 +7,31 @@ name:
 
 affiliation: "J리그 세레소 오사카 산하 클럽유스 (주니어유스)"
 category: "U-15"
-league: "일본클럽유스선수권 등 (정확한 소속 리그/카테고리 명칭은 공식 확인 필요)"
+league: "일본클럽유스선수권 / JFA, 일본클럽유스연맹 가맹 (정확한 리그 명칭은 시즌별 재확인 필요)"
+
+note: >
+  [중요] 세레소 오사카 아카데미는 U-15 카테고리를 3개 팀(본 U-15, 西(니시) U-15,
+  와카야마 U-15)으로 운영하며, 웹사이트도 두 도메인(cerezo.jp — J리그 구단 공식,
+  cerezo-sportsclub.com — 별도 법인 "세레소 오사카 스포츠클럽")으로 나뉘어 있음을
+  확인함. 이 파일은 그중 "본 U-15(セレッソ大阪U-15)"를 기준으로 작성. 콘텐츠 제작 시
+  西/와카야마 U-15와 혼동하지 않도록 주의. (출처: 구단 홈페이지 검색 결과, 2026-08-13)
 
 location:
   prefecture: "오사카부(大阪府)"
-  city: "오사카시 (정확한 훈련장 소재지는 공식 확인 필요 — 마이시마舞洲 지역으로 알려짐, 재확인 필요)"
+  city: "오사카시 코노하나구(此花区) — 훈련장 주소 기준 (아래 facilities 참고)"
 
 founded_year: unknown
 
 official:
-  website: ""            # 공식 홈페이지 URL 확인 후 기재
-  instagram: ""
+  website: "https://www.cerezo.jp/academy/u15/"
+  website_note: "별도 운영 법인 사이트: https://www.cerezo-sportsclub.com/academy/u15/ (관계 재확인 필요)"
+  instagram: "https://www.instagram.com/cerezo_academy/"
+  instagram_note: "U-15 전용이 아닌 세레소 오사카 아카데미(U-18~U-12, 걸즈 포함) 통합 계정"
   twitter: ""
   youtube: ""
 
 facilities:
-  training_ground: "확인 필요"
+  training_ground: "마이시마 샤우엣센 그라운드(舞洲シャウエッセングラウンド), 오사카부 오사카시 코노하나구 북항녹지1-2-25"
   dormitory:
     available: unknown
     details: "주니어유스(중학생) 단계 기숙사 운영 여부는 구단 공식 확인 필요"
@@ -65,13 +74,21 @@ content_angles:
   - "(2단계) 유학/입단 절차 — 공식 확인 후 별도 콘텐츠로 분리"
 
 verification:
-  status: draft
+  status: partial
   last_checked: "2026-08-13"
   notes: >
-    초기 스캐폴딩 단계. 구단명/소속/한국 연수 보도 사실 외 세부 정보(시설, 기숙사,
-    학비, 유학생 수용 정책, 최신 공식 SNS 링크)는 모두 미확인. 콘텐츠 발행 전
-    반드시 공식 홈페이지·구단 문의로 재검증할 것.
+    공식 홈페이지 URL, 훈련장 명칭/주소, 공식 인스타그램 계정은 웹검색으로 확인.
+    단, 창단연도·기숙사 유무·코칭스태프·학비·유학생 수용 정책·졸업생 명단은
+    여전히 미확인. 웹사이트가 두 도메인으로 나뉘어 있고 U-15 팀도 3개(본/西/와카야마)
+    라는 점을 발견했으므로, 콘텐츠 제작 전 반드시 cerezo.jp/academy/u15/ 페이지를
+    직접 열람하거나 구단에 문의해 세부사항을 재검증할 것.
 
 sources:
   - url: "https://www.khan.co.kr/article/201711232056015"
     note: "경향신문 - 한국 유소년 선수단 세레소 오사카 연수 보도 (2017)"
+  - url: "https://www.cerezo.jp/academy/u15/"
+    note: "세레소 오사카 공식 아카데미 U-15 페이지 (웹검색 스니펫으로 존재 확인, 2026-08-13. 직접 열람은 네트워크 제약으로 미실시)"
+  - url: "https://www.cerezo-sportsclub.com/academy/u15/"
+    note: "별도 법인 '세레소 오사카 스포츠클럽' 사이트의 U-15 페이지"
+  - url: "https://www.instagram.com/cerezo_academy/"
+    note: "세레소 오사카 아카데미 공식 인스타그램 (검색 시점 팔로워 약 1.2만)"
