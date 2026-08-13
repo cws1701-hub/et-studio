@@ -1,0 +1,63 @@
+# 구단 DB 템플릿 — 새 구단 추가 시 이 파일을 복사해서 사용하세요.
+# 모든 필드는 docs/CLUB_RESEARCH_CHECKLIST.md 순서를 따릅니다.
+# 확인되지 않은 값은 지우지 말고 unknown 으로 남겨두세요 (추측 금지).
+
+club_id: club-id-slug   # 파일명과 동일하게, 영문 소문자-하이픈
+
+name:
+  kr: ""                # 한국어 표기
+  jp: ""                # 일본어 정식 명칭
+  en: ""                # 영문 표기 (선택)
+
+affiliation: ""          # 예: J리그 OO 산하 클럽유스 / 학교축구부
+category: "U-15"         # U-12 / U-15 / U-18 등
+league: ""                # 예: 일본클럽유스선수권, 프린스리그 등
+
+location:
+  prefecture: ""
+  city: ""
+
+founded_year: unknown
+
+official:
+  website: ""
+  instagram: ""
+  twitter: ""
+  youtube: ""
+
+facilities:
+  training_ground: ""
+  dormitory:
+    available: unknown   # true / false / unknown
+    details: ""
+
+notable_alumni:            # 1차 출처(구단 공식 발표, 기사)가 있는 경우만 기재
+  - name: ""
+    verified: false
+    source: ""
+
+study_abroad:                         # 유학 관련 — 기본값 unknown, 구단 공식 확인 전까지 유지
+  accepts_international_students: unknown
+  korean_student_history:
+    summary: ""
+    source: ""
+  visa_support: unknown
+  tuition:
+    amount_range: unknown
+    currency: JPY
+    note: "구단 공식 문의 필요"
+  contact:
+    email: ""
+    inquiry_form: ""
+
+content_angles:                        # 콘텐츠 제작 시 참고할 소재 아이디어
+  - ""
+
+verification:
+  status: draft            # draft / partial / verified
+  last_checked: ""         # YYYY-MM-DD
+  notes: ""
+
+sources:
+  - url: ""
+    note: ""

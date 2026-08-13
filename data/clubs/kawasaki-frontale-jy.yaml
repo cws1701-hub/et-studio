@@ -1,0 +1,69 @@
+club_id: kawasaki-frontale-jy
+
+name:
+  kr: "가와사키 프론탈레 주니어유스"
+  jp: "川崎フロンターレU-15"
+  en: "Kawasaki Frontale U-15"
+
+affiliation: "J리그 가와사키 프론탈레 산하 클럽유스 (주니어유스)"
+category: "U-15"
+league: "일본클럽유스선수권 등 (정확한 소속 리그/카테고리 명칭은 공식 확인 필요)"
+
+location:
+  prefecture: "가나가와현(神奈川県)"
+  city: "가와사키시(川崎市) — 정확한 훈련장 소재지는 공식 확인 필요"
+
+founded_year: unknown
+
+official:
+  website: ""
+  instagram: ""
+  twitter: ""
+  youtube: ""
+
+facilities:
+  training_ground: "확인 필요"
+  dormitory:
+    available: unknown
+    details: "주니어유스(중학생) 단계 기숙사 운영 여부는 구단 공식 확인 필요"
+
+notable_alumni:
+  # 가와사키 프론탈레 유스 육성 시스템은 J리그 내에서 평판이 높은 편으로 알려짐.
+  # 아래는 축구 미디어에서 일반적으로 언급되는 이름이며, 정확한 소속 카테고리(주니어유스 vs 유스)와
+  # 시기는 구단 공식/1차 출처로 반드시 재확인 필요.
+  - name: "미토마 카오루(三笘薫)"
+    verified: false
+    source: "일반적으로 보도된 내용 — 구단 공식 자료로 재확인 필요 (대학 경유 여부 등 경로 확인 필요)"
+  - name: "타나카 아오(田中碧)"
+    verified: false
+    source: "일반적으로 보도된 내용 — 구단 공식 자료로 재확인 필요"
+
+study_abroad:
+  accepts_international_students: unknown
+  korean_student_history:
+    summary: "현재까지 확인된 공개 보도 없음 (추가 리서치 필요)."
+    source: ""
+  visa_support: unknown
+  tuition:
+    amount_range: unknown
+    currency: JPY
+    note: "구단 공식 문의 필요"
+  contact:
+    email: ""
+    inquiry_form: ""
+
+content_angles:
+  - "구단 소개: 가와사키 프론탈레 유스 육성 시스템 개관"
+  - "높은 평판의 육성 철학과 J리그 1군 진출 사례 (검증 후 게재)"
+  - "(2단계) 유학/입단 절차 — 공식 확인 후 별도 콘텐츠로 분리"
+
+verification:
+  status: draft
+  last_checked: "2026-08-13"
+  notes: >
+    초기 스캐폴딩 단계. 구단명/소속 외 세부 정보(시설, 기숙사, 학비, 유학생 수용 정책,
+    졸업생 경로, 공식 SNS 링크)는 모두 미확인. 한국 학생/선수 관련 사례도 아직 못 찾음 —
+    추가 리서치 또는 구단 직접 문의 필요. 콘텐츠 발행 전 반드시 공식 홈페이지·구단 문의로
+    재검증할 것.
+
+sources: []
