@@ -140,7 +140,10 @@ def process_match_file(session: requests.Session, path: Path, force: bool) -> bo
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--match-file", help="data/matches/ 안의 특정 파일 하나만 처리 (파일명만 입력)")
+    parser.add_argument(
+        "--match-file",
+        help="data/matches/ 안의 특정 파일 하나만 처리 (파일명, 또는 'data/matches/xxx.json'처럼 경로가 붙어도 됨)",
+    )
     parser.add_argument("--force", action="store_true", help="이미 이벤트가 병합된 파일도 다시 수집")
     args = parser.parse_args()
 
@@ -156,7 +159,9 @@ def main():
         sys.exit(f"{MATCHES_DIR} 폴더가 없습니다. 먼저 scripts/fetch_matches.py를 실행해주세요.")
 
     if args.match_file:
-        files = [MATCHES_DIR / args.match_file]
+        # "xxx.json"과 "data/matches/xxx.json" 둘 다 받아주기 위해 파일명만 취해서
+        # MATCHES_DIR와 합친다 (그대로 합치면 경로가 중복될 수 있음).
+        files = [MATCHES_DIR / Path(args.match_file).name]
         if not files[0].exists():
             sys.exit(f"파일을 찾을 수 없습니다: {files[0]}")
     else:
