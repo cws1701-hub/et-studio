@@ -1,3 +1,9 @@
+---
+matchId: 575335
+platform: instagram
+status: pending_approval
+---
+
 # 인스타 릴스 대본 — 페네르바흐체 SK vs AS 로마 (UEFA 챔피언스리그 조별리그 1R)
 
 > 참고: 이 경기는 `goalEvents`/`cardEvents`가 아직 병합되지 않아 득점자·카드 세부 기록은

@@ -14,5 +14,18 @@
 
 `output/naverblog/[날짜]/[경기ID]_post.md`로 저장해줘. 파일에는 다음을 포함해줘:
 
-1. 제목
-2. 본문 (위 구성 순서대로)
+1. 맨 위에 YAML 프런트매터로 승인 상태 표시:
+   ```
+   ---
+   matchId: [경기ID]
+   platform: naverblog
+   status: pending_approval
+   ---
+   ```
+2. 제목
+3. 본문 (위 구성 순서대로)
+
+`status`는 사람이 검수 후 `/approve [경기ID]`를 실행하기 전까지는 항상
+`pending_approval`로 둔다. 네이버는 공식 글쓰기 API가 없어서 승인 후에도
+**자동 게시는 되지 않고**, 사람이 직접 스마트에디터에 붙여넣고 발행 버튼을
+눌러야 한다 (`docs/NAVER_SEMI_AUTO.md` 참고).

@@ -7,7 +7,23 @@
 - 결과에 대한 유머 요소 1~2개, 선수/감독 인신공격 절대 금지
 - 경기 데이터에 "확인 필요" 표시가 있으면 단정하지 말고 완곡하게 처리
 
-다음 두 파일로 저장해줘:
+유튜브 업로드에 쓸 제목(클릭 유도형, 결과 완전 스포 금지)과 설명, 태그도
+함께 만들어줘. 다음 두 파일로 저장해줘:
 
-1. `output/youtube/[날짜]/[경기ID]_script.md` — 나레이션 대본 + 타임코드 자막 목록
+1. `output/youtube/[날짜]/[경기ID]_script.md` — 맨 위에 YAML 프런트매터로
+   승인 상태와 업로드 메타데이터를 표시하고, 그 아래 나레이션 대본 + 타임코드
+   자막 목록을 포함:
+   ```
+   ---
+   matchId: [경기ID]
+   platform: youtube
+   status: pending_approval
+   title: [유튜브 영상 제목]
+   description: [유튜브 설명란 문구]
+   tags: [태그1, 태그2, 태그3]
+   ---
+   ```
 2. `output/youtube/[날짜]/[경기ID]_subtitles.srt` — 나레이션 기준 SRT 자막 파일
+
+`status`는 사람이 검수 후 `/approve [경기ID]`를 실행하기 전까지는 항상
+`pending_approval`로 둔다 — 이 커맨드가 직접 `approved`로 쓰지 않는다.

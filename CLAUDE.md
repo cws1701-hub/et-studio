@@ -39,28 +39,47 @@ UEFA 유로파리그, 유럽 국가대표 A매치
 ## 폴더 구조
 
 ```
-data/matches/       # 경기별 원본 데이터 (JSON, /collect-data가 생성)
+data/matches/       # 경기별 원본 데이터 (JSON, fetch_matches.py/fetch_match_events.py가 생성)
 data/standings/     # 리그 순위 데이터
 data/ratings/       # 평점/MOM 데이터
-output/instagram/[날짜]/   # /write-instagram 결과물
+output/graphics/[경기ID]/  # build_graphics.py가 만든 자체 제작 그래픽 카드 (PNG)
+output/instagram/[날짜]/   # /write-instagram 결과물 (대본 md + srt + 나레이션 mp3 + 영상 mp4)
 output/naverblog/[날짜]/   # /write-blog 결과물
-output/youtube/[날짜]/     # /write-youtube 결과물
-scripts/            # 데이터 수집·그래픽·TTS 스크립트
+output/youtube/[날짜]/     # /write-youtube 결과물 (대본 md + srt + 나레이션 mp3 + 영상 mp4)
+scripts/            # 데이터 수집·그래픽·TTS·영상 합성·게시 스크립트
 templates/          # 플랫폼별 대본 템플릿
 ```
 
-## 자동화 범위와 사람 확인 지점
+## 자동화 범위와 사람 확인 지점 (승인 게이트)
 
-- 1~4단계(데이터 정리, 대본, 자막, 캡션)와 6단계(게시 문구)는 슬래시 커맨드로 완전 자동화한다.
-- 5단계(영상 렌더링)는 스크립트로 자동화하되, **실제 SNS 업로드는 사람이 최종 확인 후 수동으로 진행**한다.
-  (계정 정지 리스크 + 오탈자/사실관계 체크 목적)
+- 1~4단계(데이터 정리, 대본, 자막, 캡션)는 슬래시 커맨드로 완전 자동화한다.
+- 5단계(영상 렌더링: 그래픽·TTS·합성)는 `scripts/build_graphics.py` →
+  `scripts/generate_tts.py` → `scripts/assemble_video.py`로 자동화한다.
+  자세한 내용은 `docs/VIDEO_PIPELINE.md` 참고.
+- **최종 SNS 업로드는 사람이 `/approve [경기ID]`를 실행해야만 시작된다.**
+  `/write-instagram`, `/write-blog`, `/write-youtube`가 만드는 모든 결과물
+  `.md` 파일 상단엔 `status: pending_approval` 프런트매터가 있고, 사람이
+  검수 후 승인하면 `approved`로 바뀐다. `scripts/publish_approved.py`는
+  `approved` 상태인 것만 찾아 실제로 게시하고 `posted`로 표시한다.
+  (계정 정지 리스크 + 오탈자/사실관계 체크 목적 — 대본이 만들어졌다고
+  자동으로 게시되지 않는다.)
+- 게시 방식은 플랫폼마다 다르다:
+  - **인스타그램**: Meta Graph API로 실제 자동 게시 (`scripts/publish_video.py` +
+    `scripts/post_instagram.py`). `docs/INSTAGRAM_SETUP.md` 참고.
+  - **유튜브**: YouTube Data API v3로 실제 자동 업로드 (`scripts/upload_youtube.py`).
+    `docs/YOUTUBE_SETUP.md` 참고.
+  - **네이버 블로그**: 공식 글쓰기 API가 없어 승인되어도 자동 게시하지 않는다.
+    사람이 직접 스마트에디터에 붙여넣어 발행한다 (`docs/NAVER_SEMI_AUTO.md`).
 
 ## 슬래시 커맨드
 
-- `/collect-data` — 최근 경기 데이터를 수집해 `data/matches/`에 JSON으로 저장
-- `/write-instagram` — 인스타 릴스 30초 대본 + 캡션/해시태그 작성
+- `/collect-data` — `data/matches/`의 경기 JSON에 `goalEvents`/`cardEvents` 병합 여부를
+  확인하고, MOM/평점(`mom`, `momReason`, `rating`)을 직접 판단해 채운다
+- `/write-instagram` — 인스타 릴스 30초 대본 + 캡션/해시태그 + SRT 작성
 - `/write-blog` — 네이버 블로그 포스팅 작성
-- `/write-youtube` — 유튜브 1분 영상 대본 + SRT 자막 작성
+- `/write-youtube` — 유튜브 1분 영상 대본 + SRT 자막 + 업로드 메타데이터(제목/설명/태그) 작성
+- `/approve [경기ID]` — 검수 완료 표시. 해당 경기의 결과물 상태를
+  `pending_approval` → `approved`로 바꿔서 자동 게시 대상에 포함시킨다
 
 ## 매일 자동 체크 & 발행 주기 정책
 
@@ -77,6 +96,10 @@ templates/          # 플랫폼별 대본 템플릿
      아직 생성되지 않은 콘텐츠가 있으면 **인스타그램 + 네이버 블로그 + 유튜브
      3종을 한 번에 생성**한다 (`/write-instagram`, `/write-blog`, `/write-youtube`).
   4. 이미 `output/` 아래에 해당 경기·플랫폼 결과물이 있으면 재생성하지 않는다(멱등).
+  5. `scripts/publish_approved.py`를 실행해, 사람이 이미 `/approve`한 항목
+     (`status: approved`)이 있으면 그래픽·음성·영상을 만들어 실제로 게시한다.
+     자격 증명이 없거나 네트워크가 막히면 해당 항목은 `approved` 상태로 남기고
+     다음 날 다시 시도한다.
 - 생성/병합된 파일은 커밋 후 원격 브랜치에 푸시한다.
 
 ## 매 게시물 발행 전 체크리스트
@@ -85,4 +108,4 @@ templates/          # 플랫폼별 대본 템플릿
 - [ ] 인신공격성 표현 없는지 대본 재검수
 - [ ] 플랫폼별 분량 규정 준수 (릴스 30초 / 유튜브 1분 / 블로그 3000자)
 - [ ] MOM·평점·순위 변동 3종 모두 포함됐는지 확인
-- [ ] 업로드 전 최종 사람 확인
+- [ ] 업로드 전 최종 사람 확인 — `/approve [경기ID]` 실행 전까지는 게시되지 않음
