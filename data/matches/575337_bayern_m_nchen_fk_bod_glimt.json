@@ -1,0 +1,31 @@
+{
+  "id": 575337,
+  "competition": {
+    "code": "CL",
+    "name": "챔피언스리그"
+  },
+  "season": 2557,
+  "matchday": 1,
+  "utcDate": "2026-09-10T19:00:00Z",
+  "status": "FINISHED",
+  "homeTeam": {
+    "id": 5,
+    "name": "FC Bayern München"
+  },
+  "awayTeam": {
+    "id": 5721,
+    "name": "FK Bodø/Glimt"
+  },
+  "score": {
+    "winner": "HOME_TEAM",
+    "duration": "REGULAR",
+    "fullTime": {
+      "home": 5,
+      "away": 0
+    },
+    "halfTime": {
+      "home": 0,
+      "away": 0
+    }
+  }
+}

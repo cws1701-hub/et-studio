@@ -1,0 +1,31 @@
+{
+  "id": 575339,
+  "competition": {
+    "code": "CL",
+    "name": "챔피언스리그"
+  },
+  "season": 2557,
+  "matchday": 1,
+  "utcDate": "2026-09-10T19:00:00Z",
+  "status": "FINISHED",
+  "homeTeam": {
+    "id": 7397,
+    "name": "Como 1907"
+  },
+  "awayTeam": {
+    "id": 721,
+    "name": "RB Leipzig"
+  },
+  "score": {
+    "winner": "HOME_TEAM",
+    "duration": "REGULAR",
+    "fullTime": {
+      "home": 4,
+      "away": 1
+    },
+    "halfTime": {
+      "home": 2,
+      "away": 0
+    }
+  }
+}

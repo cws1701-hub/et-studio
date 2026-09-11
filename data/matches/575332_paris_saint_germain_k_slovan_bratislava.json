@@ -1,0 +1,31 @@
+{
+  "id": 575332,
+  "competition": {
+    "code": "CL",
+    "name": "챔피언스리그"
+  },
+  "season": 2557,
+  "matchday": 1,
+  "utcDate": "2026-09-09T19:00:00Z",
+  "status": "FINISHED",
+  "homeTeam": {
+    "id": 524,
+    "name": "Paris Saint-Germain FC"
+  },
+  "awayTeam": {
+    "id": 7509,
+    "name": "ŠK Slovan Bratislava"
+  },
+  "score": {
+    "winner": "HOME_TEAM",
+    "duration": "REGULAR",
+    "fullTime": {
+      "home": 6,
+      "away": 1
+    },
+    "halfTime": {
+      "home": 3,
+      "away": 0
+    }
+  }
+}

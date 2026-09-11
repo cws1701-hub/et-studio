@@ -1,0 +1,31 @@
+{
+  "id": 575338,
+  "competition": {
+    "code": "CL",
+    "name": "챔피언스리그"
+  },
+  "season": 2557,
+  "matchday": 1,
+  "utcDate": "2026-09-10T19:00:00Z",
+  "status": "FINISHED",
+  "homeTeam": {
+    "id": 66,
+    "name": "Manchester United FC"
+  },
+  "awayTeam": {
+    "id": 10233,
+    "name": "Sabah FK"
+  },
+  "score": {
+    "winner": "HOME_TEAM",
+    "duration": "REGULAR",
+    "fullTime": {
+      "home": 4,
+      "away": 0
+    },
+    "halfTime": {
+      "home": 3,
+      "away": 0
+    }
+  }
+}

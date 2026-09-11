@@ -1,0 +1,31 @@
+{
+  "id": 575331,
+  "competition": {
+    "code": "CL",
+    "name": "챔피언스리그"
+  },
+  "season": 2557,
+  "matchday": 1,
+  "utcDate": "2026-09-09T19:00:00Z",
+  "status": "FINISHED",
+  "homeTeam": {
+    "id": 64,
+    "name": "Liverpool FC"
+  },
+  "awayTeam": {
+    "id": 78,
+    "name": "Club Atlético de Madrid"
+  },
+  "score": {
+    "winner": "HOME_TEAM",
+    "duration": "REGULAR",
+    "fullTime": {
+      "home": 2,
+      "away": 1
+    },
+    "halfTime": {
+      "home": 1,
+      "away": 1
+    }
+  }
+}
